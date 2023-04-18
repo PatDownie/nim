@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  max-width: 1024px;
+  color: black;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  margin: 0 auto;
+  background-color: #fef5ef;
+}
+
+body {
+  background-color: white;
+  color: black;
+  width: 100%;
+}
+/* Header */
+header {
+  background-color: #493e45;
+  width: 100%;
+  padding: 0.7rem;
+}
+
+.header-container h1 {
+  text-align: center;
+}
+.header-container nav {
+  padding: 1.5rem 0;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-container img {
+  float: left;
+  height: auto;
+  padding: 5px 0 0 100px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+li:hover {
+  color: rgb(234, 202, 232);
+}
+/* Main */
+
+/* Index */
+.game-banner img {
+  display: block;
+  margin: auto;
+  padding-top: 10px;
+}
+
+.intro-section {
+  padding-top: 10px;
+}
+
+#patintro img p {
+  float: left;
+  width: 150px;
+}
+
+.ross-section {
+  padding-top: 10px;
+  display: block;
+  margin: auto;
+}
+
+/* Game */
+
+#nimdiv {
+}
+
+/* Results */
+
+/* Footer */
+footer {
+  background-color: #9d5c63;
+  padding: 20px;
+}
