@@ -83,10 +83,30 @@ li:hover {
 
 /* Game */
 
-#nimdiv {
+#nimdiv img {
+  padding-top: 60px;
+  height: auto;
+  margin: auto;
+  display: block;
+}
+
+#compReact {
+  position: absolute;
+  top: 80px;
+  right: 200px;
 }
 
 /* Results */
+.result-container {
+  padding-top: 50px;
+}
+
+.result-container img {
+  height: auto;
+  margin: auto;
+  display: block;
+  padding-bottom: 10px;
+}
 
 /* Footer */
 footer {
