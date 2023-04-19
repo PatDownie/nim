@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  max-width: 1024px;
+  color: black;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  margin: 0 auto;
+  background-color: #fef5ef;
+}
+
+body {
+  background-color: white;
+  color: black;
+  width: 100%;
+}
+/* Header */
+header {
+  background-color: #493e45;
+  width: 100%;
+  padding: 0.7rem;
+}
+
+.header-container h1 {
+  display: block;
+  margin-top: 50px;
+  text-align: center;
+  width: 70%;
+  color: #a8b9d4;
+  font-size: large;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+.header-container nav {
+  padding: 1.5rem 0;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  color: #feb95f;
+}
+
+.header-container img {
+  float: left;
+  height: auto;
+  padding: 0 0 0 40px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+li:hover {
+  color: rgb(89, 216, 245);
+}
+/* Main */
+
+/* Index */
+.game-banner img {
+  display: block;
+  margin: auto;
+  padding: 30px 0 20px 0;
+  width: 90%;
+}
+/* 18/4 - carry on working here */
+.intro-section {
+  padding: 20px;
+  text-align: center;
+  display: flex;
+}
+
+.intro-section img {
+  display: fle;
+}
+
+#patintro img p {
+  float: left;
+  width: 90%;
+}
+
+.ross-section {
+  padding-top: 10px;
+  display: block;
+  margin: auto;
+}
+
+/* Game */
+
+#nimdiv img {
+  padding-top: 60px;
+  height: auto;
+  margin: auto;
+  display: block;
+}
+
+#compReact {
+  position: relative;
+  bottom: 500px;
+  left: 275px;
+}
+
+#button-container {
+  position: relative;
+  bottom: 150px;
+  left: 390px;
+  width: 50%;
+}
+
+button {
+  background-color: #a8b9d4;
+  border: none;
+  color: #493e45;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+/* Results */
+.result-container {
+  padding-top: 50px;
+}
+
+.result-container img {
+  height: auto;
+  margin: auto;
+  display: block;
+  padding-bottom: 40px;
+}
+
+/* Footer */
+footer {
+  background-color: #9d5c63;
+  padding: 20px;
+  color: #fef5ef;
+}
