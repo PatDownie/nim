@@ -86,7 +86,9 @@ function handlePlayerMove(event) {
   buttonDiv.removeEventListener("click", handlePlayerMove);
   buttonDiv.className = "inactive";
   let removedDivs = event.target.id;
-  // document.getElementById("compStatic").id = "compThink";
+
+  document.getElementById("compStatic").id = "compThink";
+
   let divForRemoval;
   for (let i = 0; i < removedDivs; i++) {
     divForRemoval = document.querySelector("#nimdiv div.unremoved");
@@ -102,8 +104,10 @@ function handlePlayerMove(event) {
   }
   function computerTurn() {
     let computerRemovedDivs = 4 - event.target.id;
+
     // alert(`pc takes ${computerRemovedDivs}`);
-    // document.getElementById("compThink").id = "compStatic";
+    document.getElementById("compThink").id = "compStatic";
+
     for (let i = 0; i < computerRemovedDivs; i++) {
       let divForRemoval = document.querySelector("#nimdiv div.unremoved");
       divForRemoval.className = "computer-removed";
@@ -116,7 +120,7 @@ function handlePlayerMove(event) {
     }
     turnCounter++;
     if (turnCounter === 3) {
-      // document.getElementById("compStatic").id = "compSmug";
+      document.getElementById("compStatic").id = "compSmug";
       alert("you lose dumbass!!!");
       saveStats();
     } else {
