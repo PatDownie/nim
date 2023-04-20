@@ -140,47 +140,154 @@ li:hover {
 
 #compHolder {
   position: relative;
-  top: 0px;
-  left: 170px;
-}
-
-#compHolder h2 {
-  position: relative;
+  width: 700px;
+  height: 100px;
   top: 20px;
-  right: 90px;
+  left: 300px;
 }
 
-#compBorder {
-  position: relative;
+#compHolder #compBorder {
+  position: absolute;
   top: 0px;
   left: 0px;
   z-index: 2;
 }
 
-#compStatic {
-  position: relative;
-  top: 8px;
-  right: 149px;
+#compHolder .compStatic {
+  position: absolute;
+  top: 2px;
+  left: 2px;
   width: 145px;
   z-index: 1;
 }
 
-#compThink {
-  position: relative;
-  top: 8px;
-  right: 148px;
-  width: 145px;
-  height: 70px;
-  content: url("/images/thinking.gif");
+#evilface {
+  opacity: 0;
 }
 
-#compSmug {
-  position: relative;
-  top: 5px;
-  right: 145px;
+.compStatic + #evilface {
+  opacity: 1;
+  position: absolute;
+  top: 4px;
+  left: 2px;
+  width: 145px;
+  z-index: 2;
+}
+
+#compHolder .compThink {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 135px;
+  height: 70px;
+  content: url("/images/thinking.gif");
+  object-fit: fill;
+}
+
+#compHolder .compSmug {
+  position: absolute;
+  top: 3px;
+  left: 5px;
   width: 140px;
   content: url("/images/mutly.gif");
 }
+
+#compHolder #speechbubble {
+  position: absolute;
+  top: 0px;
+  left: 170px;
+  scale: 200%;
+  /* height: 500;
+  width: 600px; */
+  z-index: 1;
+}
+
+#compHolder #speech {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: aqua; */
+  position: absolute;
+  top: 0px;
+  left: 210px;
+  width: 160px;
+  height: 50px;
+  z-index: 2;
+}
+#compHolder #speech h2 {
+  text-align: center;
+}
+#compHolder #speech h2.thinking {
+  text-align: center;
+  animation-name: thinkingText;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+@keyframes thinkingText {
+  0% {
+    letter-spacing: normal;
+  }
+  50% {
+    letter-spacing: 0.2em;
+  }
+  100% {
+    letter-spacing: normal;
+  }
+}
+
+#compHolder #ducksworth.hidden {
+  display: none;
+}
+#compHolder #ducksworth.revealed {
+  position: absolute;
+  top: -30px;
+  left: -82px;
+  width: 130px;
+  height: 150px;
+  z-index: 1;
+  animation-name: reveal-ducksworth;
+  animation-timing-function: ease;
+  animation-duration: 2s;
+}
+
+@keyframes reveal-ducksworth {
+  0% {
+    top: -200px;
+  }
+  100% {
+    top: -30px;
+  }
+}
+#compHolder #ducksworth-arm,
+#compHolder #ducksworth-claw1,
+#compHolder #ducksworth-claw2 {
+  position: absolute;
+  top: -590px;
+  left: -82px;
+  height: 500px;
+}
+#compHolder #ducksworth-claw2 {
+  z-index: 2;
+}
+#compHolder #ducksworth-arm.revealed,
+#compHolder #ducksworth-claw1.revealed,
+#compHolder #ducksworth-claw2.revealed {
+  animation-name: reveal-ducksworth-arm;
+  animation-timing-function: ease;
+  animation-duration: 4s;
+}
+@keyframes reveal-ducksworth-arm {
+  0% {
+    top: -590px;
+  }
+  50% {
+    top: -420px;
+  }
+  100% {
+    top: -590px;
+  }
+}
+
 /* Results */
 .result-container {
   padding-top: 50px;
