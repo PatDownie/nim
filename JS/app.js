@@ -12,8 +12,11 @@ button.addEventListener("click", (_) => {
 
 // Loadstat
 
+let getStats;
+let stats;
+
 function loadStats() {
-  let getStats = localStorage.getItem("saveStats");
+  getStats = localStorage.getItem("savedStats");
   if (getStats) {
     stats = JSON.parse(getStats);
   }
@@ -26,11 +29,9 @@ function renderStats() {
   let divh2 = document.createElement("h2");
   divh2.textContent = `Your Stats!`;
   divSelect.appendChild(divh2);
-  for (let i = 0; i < stats.length; i++) {
-    let p = document.createElement("p");
-    p.textContent = `Your total of plays is ${stats[i].gamesPlayed} and you managed to save ${stats[i].ducksTaken} ducks, which gives you an average of ${stats[i].avgDucksPerGame} per game. You've won ${stats[i].gamesWon} games, that's just terrible`;
-    divSelect.appendChild(p);
-  }
+  let p = document.createElement("p");
+  p.textContent = `Your total of plays is ${stats.gamesPlayed} and you managed to save ${stats.ducksTaken} ducks, which gives you an average of ${stats.avgDucksPerGame} per game. You've won ${stats.gamesWon} games, that's just terrible`;
+  divSelect.appendChild(p);
 }
 
 function renderWarning() {
@@ -43,10 +44,10 @@ function renderWarning() {
 }
 
 function renderChart() {
+  loadStats();
   if (!getStats) {
     renderWarning();
   } else {
-    loadStats();
     renderStats();
   }
 }
