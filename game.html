@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
-    <link rel="icon" href="https://em-content.zobj.net/thumbs/120/microsoft/319/pool-8-ball_1f3b1.png">
+    <link rel="icon" href="https://em-content.zobj.net/thumbs/120/microsoft/319/pool-8-ball_1f3b1.png" />
     <link rel="stylesheet" href="/CSS/reset.css" />
     <link rel="stylesheet" href="/CSS/styles.css" />
     <link rel="stylesheet" href="./CSS/nimgame.css" />
@@ -16,7 +16,7 @@
   <body>
     <header>
       <div class="header-container">
-        <img id="siteLogo" src="https://placehold.co/80x65" alt="" />
+        <img id="siteLogo" src="images/logo.png" alt="" />
         <h1>Win Nim in a Whim!</h1>
         <nav>
           <ul>
@@ -28,13 +28,23 @@
       </div>
     </header>
     <main>
-      <div id="gamediv">
-        <div id="nimdiv"></div>
-        <div id="buttondiv"></div>
-      </div>
+      <section>
+        <div id="compBorder">
+          <img src="/images/crtmonitor.png" alt="" />
+        </div>
+        <div>
+          <img id="compStatic" src="/images/static.gif" />
+        </div>
+      </section>
+      <section>
+        <div id="gamediv">
+          <div id="nimdiv"></div>
+          <div id="buttondiv"></div>
+        </div>
+      </section>
       <!-- <button onclick="randomTimeoutTime(3,6)">test</button> -->
     </main>
-    <footer></footer>
+    <footer>Footer©</footer>
     <script src="./JS/nim.js"></script>
   </body>
 </html>

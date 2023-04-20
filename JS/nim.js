@@ -26,6 +26,7 @@ let turnCounter = 0;
 function handlePlayerMove(event) {
   buttonDiv.removeEventListener("click", handlePlayerMove);
   let removedDivs = event.target.id;
+  document.getElementById("compStatic").id = "compThink";
   const nimDiv = document.getElementById("nimdiv");
   for (let i = 0; i < removedDivs; i++) {
     let divForRemoval = nimDiv.lastElementChild;
@@ -35,12 +36,14 @@ function handlePlayerMove(event) {
     let computerRemovedDivs = 4 - event.target.id;
     console.log("pc takes: " + computerRemovedDivs);
     alert(`pc takes ${computerRemovedDivs}`);
+    document.getElementById("compThink").id = "compStatic";
     for (let i = 0; i < computerRemovedDivs; i++) {
       let divForRemoval = nimDiv.lastElementChild;
       nimDiv.removeChild(divForRemoval);
     }
     turnCounter++;
     if (turnCounter === 3) {
+      document.getElementById("compStatic").id = "compSmug";
       alert("you lose dumbass!!!");
     } else {
       buttonDiv.addEventListener("click", handlePlayerMove);

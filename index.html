@@ -13,10 +13,9 @@
     <title>Welcome to Nim!</title>
   </head>
   <body>
-
     <header>
       <div class="header-container">
-        <img id="siteLogo" src="https://placehold.co/80x65" alt="" />
+        <img id="siteLogo" src="images/logo.png" alt="" />
         <h1>Welcome to Nim</h1>
         <nav>
           <ul>
@@ -30,29 +29,27 @@
     <main>
       <section class="main-container">
         <div class="game-banner">
-          <img src="https://placehold.co/800x400" alt="Glorious Nim" />
+          <img class="first" src="/images/banner1.jpg" alt="Glorious Nim" />
+          <img src="/images/banner2.jpg" alt="Nim Background" />
+          <img src="/images/banner3.jpg" alt="In the name of Nim" />
+          <img src="/images/banner4.jpg" alt="In Nim" />
+          <img src="/images/banner5.jpg" alt="We Nim" />
+          <img src="/images/banner6.jpg" alt="So Nim" />
         </div>
       </section>
       <section class="intro-section">
-        <div id="patintro">
-          <h2>What is Nim?</h2>
-          <img src="https://placehold.co/250x250" alt="The Patrick" />
+        <div id="nimintro">
+          <img src="/images/nimexample.png" alt="Nim Intro" />
+          <h2 id="introtitle">What is Nim?</h2>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea dolor est voluptatibus quae consectetur laudantium reprehenderit nostrum natus, enim repudiandae error inventore dolorem quos
-            totam.
+            Nim is a mathematical game of strategy in which two players take turns removing objects from distinct heaps or piles. On each turn, a player must remove at least one object, and may remove
+            any number of objects provided they all come from the same heap or pile.
           </p>
-        </div>
-        <div id="rossintro">
-          <h2>Why is Nim?</h2>
-          <img src="https://placehold.co/250x250" alt="The Ross" />
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione quaerat id necessitatibus facere saepe tempora fugiat, ipsam, animi atque ex nisi voluptates. Veritatis, neque deleniti.
-          </p>
+          <button class="button" onclick="window.location.href = './game.html'">PLAY NIM</button>
         </div>
       </section>
     </main>
     <footer>Footer©</footer>
     <script src="/JS/app.js"></script>
-
   </body>
 </html>
