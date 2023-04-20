@@ -137,33 +137,47 @@ li:hover {
 
 /* Game */
 
+#compHolder {
+  position: relative;
+  top: 0px;
+  left: 170px;
+}
+
+#compHolder h2 {
+  position: relative;
+  top: 20px;
+  right: 90px;
+}
+
 #compBorder {
-  scale: 20%;
+  position: relative;
+  top: 0px;
+  left: 0px;
   z-index: 2;
-  position: fixed;
-  bottom: 408px;
-  left: -52px;
 }
 
 #compStatic {
-  scale: 46%;
+  position: relative;
+  top: 8px;
+  right: 149px;
+  width: 145px;
   z-index: 1;
-  display: fixed;
-  left: 100px;
 }
 
 #compThink {
-  scale: 41%;
-  z-index: 1;
-  left: 110px;
+  position: relative;
+  top: 8px;
+  right: 148px;
+  width: 145px;
+  height: 70px;
   content: url("/images/thinking.gif");
 }
 
 #compSmug {
-  scale: 44%;
-  z-index: 1;
-  display: relative;
-  left: 1000px;
+  position: relative;
+  top: 5px;
+  right: 145px;
+  width: 140px;
   content: url("/images/mutly.gif");
 }
 /* Results */

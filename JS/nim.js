@@ -59,7 +59,7 @@ function randomTimeoutTime(min, max) {
 function handlePlayerMove(event) {
   buttonDiv.removeEventListener("click", handlePlayerMove);
   let removedDivs = event.target.id;
-  // document.getElementById("compStatic").id = "compThink";
+  document.getElementById("compStatic").id = "compThink";
   const nimDiv = document.getElementById("nimdiv");
   let divForRemoval;
   for (let i = 0; i < removedDivs; i++) {
@@ -76,7 +76,7 @@ function handlePlayerMove(event) {
     let computerRemovedDivs = 4 - event.target.id;
     console.log("pc takes: " + computerRemovedDivs);
     alert(`pc takes ${computerRemovedDivs}`);
-    // document.getElementById("compThink").id = "compStatic";
+    document.getElementById("compThink").id = "compStatic";
     for (let i = 0; i < computerRemovedDivs; i++) {
       let divForRemoval = document.querySelector("#nimdiv div.unremoved");
       divForRemoval.className = "computer-removed";
@@ -89,7 +89,7 @@ function handlePlayerMove(event) {
     }
     turnCounter++;
     if (turnCounter === 3) {
-      // document.getElementById("compStatic").id = "compSmug";
+      document.getElementById("compStatic").id = "compSmug";
       alert("you lose dumbass!!!");
     } else {
       buttonDiv.addEventListener("click", handlePlayerMove);
