@@ -4,7 +4,7 @@
 
 #gamediv {
   background-color: #493e45;
-  padding-top: 200px;
+  padding-top: 250px;
 }
 #armsdiv {
   display: flex;
@@ -100,13 +100,13 @@
 }
 #nimdiv div img {
   width: 90px;
-  height: 200px;
+  height: 180px;
   position: absolute;
   top: -110px;
 }
-#nimdiv div:last-of-type {
+/* #nimdiv div:last-of-type {
   /* background-color: #feb95f; */
-}
+/* } */
 #nimdiv div.player-removed {
   /* width: 0px;
   height: 0px; */
