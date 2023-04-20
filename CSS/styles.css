@@ -47,6 +47,7 @@ header {
   float: left;
   height: auto;
   padding: 0 0 0 40px;
+  max-width: 150px;
 }
 
 a {
@@ -68,58 +69,56 @@ li:hover {
 /* Main */
 
 /* Index */
-.game-banner img {
-  display: block;
-  margin: auto;
-  padding: 30px 0 20px 0;
-  width: 90%;
+#introtitle {
+  padding: 20px;
+  font-weight: 700;
 }
+
+.main-container {
+  overflow: hidden;
+}
+
+.game-banner {
+  background: url("..path/to/image") repeat-x;
+  padding-top: 50px;
+  height: 420px;
+  width: 5076px;
+  animation: slide 60s linear infinite;
+}
+
+.game-banner img {
+  width: 10%;
+}
+
+@keyframes slide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-1692px, 0, 0);
+  }
+}
+
 /* 18/4 - carry on working here */
 .intro-section {
   padding: 20px;
   text-align: center;
-  display: flex;
 }
 
-.intro-section img {
-  display: fle;
-}
-
-#patintro img p {
-  float: left;
-  width: 90%;
-}
-
-.ross-section {
+#nimintro {
   padding-top: 10px;
-  display: block;
-  margin: auto;
+  margin: 15px;
+  padding-bottom: 80px;
 }
 
-/* Game */
-
-#nimdiv img {
-  padding-top: 60px;
-  height: auto;
-  margin: auto;
-  display: block;
+#nimintro img {
+  height: 250px;
+  width: 270px;
+  float: left;
 }
 
-#compReact {
-  position: relative;
-  bottom: 500px;
-  left: 275px;
-}
-
-#button-container {
-  position: relative;
-  bottom: 150px;
-  left: 390px;
-  width: 50%;
-}
-
-button {
-  background-color: #a8b9d4;
+.button {
+  background-color: #feb95f;
   border: none;
   color: #493e45;
   padding: 15px 32px;
@@ -127,8 +126,46 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  margin-top: 60px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  color: white;
+}
+
+/* Game */
+
+#compBorder {
+  scale: 20%;
+  z-index: 2;
+  position: fixed;
+  bottom: 408px;
+  left: -52px;
+}
+
+#compStatic {
+  scale: 46%;
+  z-index: 1;
+  display: fixed;
+  left: 100px;
+}
+
+#compThink {
+  scale: 41%;
+  z-index: 1;
+  left: 110px;
+  content: url("/images/thinking.gif");
+}
+
+#compSmug {
+  scale: 44%;
+  z-index: 1;
+  display: relative;
+  left: 1000px;
+  content: url("/images/mutly.gif");
+}
 /* Results */
 .result-container {
   padding-top: 50px;
@@ -139,6 +176,31 @@ button {
   margin: auto;
   display: block;
   padding-bottom: 40px;
+}
+
+.mobileButton {
+  background-color: #feb95f;
+  border: none;
+  color: #493e45;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  margin: auto;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+button .comment {
+  display: none;
+}
+
+button:hover .replies {
+  display: none;
+}
+
+button:hover .comment {
+  display: inline;
 }
 
 /* Footer */
