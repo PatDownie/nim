@@ -13,21 +13,6 @@
   margin: 0 auto;
   background-color: #fef5ef;
 }
-.bodyDiv.easterEgg {
-  animation: resize 1s;
-  animation-iteration-count: infinite;
-}
-@keyframes resize {
-  0% {
-    max-width: 1024px;
-  }
-  50% {
-    max-width: 300px;
-  }
-  100% {
-    max-width: 1024px;
-  }
-}
 
 body {
   background-color: white;
@@ -413,4 +398,99 @@ footer {
   background-color: #9d5c63;
   padding: 20px;
   color: #fef5ef;
+}
+
+/* Easter egg  */
+
+#easterEggDiv {
+  width: 100%;
+  height: 10px;
+  background-color: #eb686d;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+#chrispointleft,
+#chrispointright {
+  scale: 40%;
+  position: absolute;
+  animation-duration: 7s;
+}
+#chrispointright.hidden {
+  right: -900px;
+  bottom: -600px;
+}
+#chrispointleft.hidden {
+  left: -900px;
+  bottom: -600px;
+}
+#chrispointright.revealed {
+  right: -450px;
+  bottom: -600px;
+  animation-name: reveal-chris-right;
+}
+#chrispointleft.revealed {
+  left: -450px;
+  bottom: -600px;
+  animation-name: reveal-chris-left;
+}
+@keyframes reveal-chris-right {
+  0% {
+    right: -900px;
+  }
+  100% {
+    right: -450px;
+  }
+}
+@keyframes reveal-chris-left {
+  0% {
+    left: -900px;
+  }
+  100% {
+    left: -450px;
+  }
+}
+
+.bodyDiv.easterEgg {
+  animation: resize 1s;
+  animation-iteration-count: infinite;
+}
+@keyframes resize {
+  0% {
+    max-width: 1024px;
+  }
+  50% {
+    max-width: 300px;
+  }
+  100% {
+    max-width: 1024px;
+  }
+}
+
+body.chrisbackground {
+  background-image: url("/images/chrishead.png");
+  /* background-position: top 0; */
+  animation-name: background-scroll-right;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+html.chrisbackground {
+  background-image: url("/images/chrishead.png");
+  /* background-position: top 0; */
+  animation-name: background-scroll-right;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes background-scroll-right {
+  0% {
+    background-position: top 0 left 0;
+  }
+  50% {
+    background-position: top 0 left 35px;
+  }
+  100% {
+    background-position: top 0 left 70px;
+  }
 }

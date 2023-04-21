@@ -13,7 +13,22 @@ function pageResize() {
   bodyDiv.classList.add("easterEgg");
 }
 
+function revealChris() {
+  let chrisLeft = document.getElementById("chrispointleft");
+  let chrisRight = document.getElementById("chrispointright");
+  chrisLeft.className = "revealed";
+  chrisRight.className = "revealed";
+}
+function changeBackground() {
+  let HTML = document.querySelector("html");
+  let body = document.querySelector("body");
+  body.className = "chrisbackground";
+  HTML.className = "chrisbackground";
+}
+
 function easterEggActivate() {
   // setTimeout(pageResize, 19500);
-  setTimeout(pageResize, 500);
+  setTimeout(pageResize, 15000);
+  setTimeout(revealChris, 500);
+  setTimeout(changeBackground, 7000);
 }
