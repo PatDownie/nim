@@ -468,7 +468,7 @@ footer {
 }
 
 body.chrisbackground {
-  background-image: url("/images/chrishead.png");
+  background-image: url("./images/chrishead.png");
   /* background-position: top 0; */
   animation-name: background-scroll-wave;
   animation-duration: 1s;
@@ -476,7 +476,7 @@ body.chrisbackground {
   animation-timing-function: linear;
 }
 html.chrisbackground {
-  background-image: url("/images/chrishead.png");
+  background-image: url("./images/chrishead.png");
   /* background-position: top 0; */
   animation-name: background-scroll-wave;
   animation-duration: 1s;
