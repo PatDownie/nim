@@ -4,20 +4,88 @@ let totalNimElements = 12;
 
 let turnCounter = 0;
 
-const buttonDiv = document.getElementById("buttondiv");
-buttonDiv.addEventListener("click", handlePlayerMove);
+let ducksTakenThisGame;
+
+let mockeryArray = [
+  "You're quackers!",
+  "You were a sitting duck all along!",
+  "You ugly duckling!",
+  "You're looking down!",
+  "Waddle away, fool!",
+  "Your brain needs debugging!",
+  "What the duck did you just ducking say to me you little duck? I'll have you know I graduated top of my class in the navy ducklings and h...",
+  "Even french Jeremy couldn't beat me!",
+  "const yourBrain = null;",
+  "const you = stupid;",
+  'function mockery(){let mockery = "hahaha!"; return mockery;};',
+  "I've got a 'variable' to declare! You suck!!",
+];
+// let mockeryArray = ['function mockery(){let mockery = "hahaha!"; return mockery;};'];
+
+function randomMockery() {
+  document.getElementById("computer").className = "compStatic";
+  document.getElementById("ducksworth").className = "revealed";
+  document.getElementById("ducksworth-arm").className = "revealed";
+  document.getElementById("ducksworth-claw1").className = "revealed";
+  document.getElementById("ducksworth-claw2").className = "revealed";
+
+  let random = Math.floor(mockeryArray.length * Math.random());
+  let mockery = mockeryArray[random];
+  speechText.className = "";
+  speechText.textContent = mockery;
+}
+
+function resetGame() {
+  nimDiv.innerHTML = "";
+  armsDiv.innerHTML = "";
+  clawsDiv1.innerHTML = "";
+  clawsDiv2.innerHTML = "";
+  buttonDiv.innerHTML = "";
+  document.getElementById("ducksworth").className = "hidden";
+  document.getElementById("ducksworth-arm").className = "hidden";
+  document.getElementById("ducksworth-claw1").className = "hidden";
+  document.getElementById("ducksworth-claw2").className = "hidden";
+  beginNim(totalNimElements);
+}
 
 const nimDiv = document.getElementById("nimdiv");
 const armsDiv = document.getElementById("armsdiv");
 const clawsDiv1 = document.getElementById("clawsdiv1");
 const clawsDiv2 = document.getElementById("clawsdiv2");
+const buttonDiv = document.getElementById("buttondiv");
+const resetDiv = document.getElementById("resetdiv");
+const speechText = document.getElementById("speechText");
 
-let ducksTakenThisGame;
+buttonDiv.addEventListener("click", handlePlayerMove);
+resetDiv.addEventListener("click", resetGame);
+
+function activateAllButtons() {
+  buttonDiv.addEventListener("click", handlePlayerMove);
+  buttonDiv.className = "active";
+  resetDiv.addEventListener("click", resetGame);
+  resetDiv.className = "active";
+}
+
+function activateResetButton() {
+  resetDiv.addEventListener("click", resetGame);
+  resetDiv.className = "active";
+}
+
+function deactivateAllButtons() {
+  buttonDiv.removeEventListener("click", handlePlayerMove);
+  buttonDiv.className = "inactive";
+  resetDiv.removeEventListener("click", resetGame);
+  resetDiv.className = "inactive";
+}
 
 function beginNim(nimNumber) {
+  document.getElementById("computer").className = "compStatic";
+  speechText.className = "";
+  speechText.textContent = "You dare challenge me??";
   turnCounter = 0;
   ducksTakenThisGame = 0;
   buttonDiv.className = "active";
+  resetDiv.className = "active";
   for (let i = 0; i < nimNumber; i++) {
     if (i == nimNumber - 1) {
       let nimElementDiv = document.createElement("div");
@@ -69,6 +137,13 @@ function beginNim(nimNumber) {
     buttonElementDiv.id = i + 1;
     buttonDiv.appendChild(buttonElementDiv);
   }
+  let nimElements = document.querySelectorAll("#nimdiv div");
+  for (let i = 0; i < nimElements.length; i++) {
+    nimElements[i].addEventListener("animationend", function () {
+      nimElements[i].style.opacity = "0";
+    });
+  }
+  activateAllButtons();
 }
 
 function randomTimeoutTime(min, max) {
@@ -77,17 +152,13 @@ function randomTimeoutTime(min, max) {
   return milliseconds;
 }
 
-function activateButtons() {
-  buttonDiv.addEventListener("click", handlePlayerMove);
-  buttonDiv.className = "active";
-}
-
 function handlePlayerMove(event) {
-  buttonDiv.removeEventListener("click", handlePlayerMove);
-  buttonDiv.className = "inactive";
+  deactivateAllButtons();
   let removedDivs = event.target.id;
 
-  document.getElementById("compStatic").id = "compThink";
+  document.getElementById("computer").className = "compThink";
+  speechText.textContent = "hmmm...";
+  speechText.className = "thinking";
 
   let divForRemoval;
   for (let i = 0; i < removedDivs; i++) {
@@ -105,8 +176,7 @@ function handlePlayerMove(event) {
   function computerTurn() {
     let computerRemovedDivs = 4 - event.target.id;
 
-    // alert(`pc takes ${computerRemovedDivs}`);
-    document.getElementById("compThink").id = "compStatic";
+    document.getElementById("computer").className = "compStatic";
 
     for (let i = 0; i < computerRemovedDivs; i++) {
       let divForRemoval = document.querySelector("#nimdiv div.unremoved");
@@ -118,35 +188,26 @@ function handlePlayerMove(event) {
       let robotClaw2 = document.querySelector("#clawsdiv2 div.unremoved");
       robotClaw2.className = "computer-removed";
     }
+    speechText.className = "";
+    speechText.textContent = "I'll take " + computerRemovedDivs + "!";
     turnCounter++;
     if (turnCounter === 3) {
-      document.getElementById("compStatic").id = "compSmug";
-      alert("you lose dumbass!!!");
+      document.getElementById("computer").className = "compSmug";
+      // alert("you lose dumbass!!!");
       saveStats();
+      setTimeout(activateResetButton, 4000);
+      setTimeout(randomMockery, 4000);
     } else {
-      setTimeout(activateButtons, 4000);
+      setTimeout(activateAllButtons, 4000);
     }
   }
-  setTimeout(computerTurn, randomTimeoutTime(1200, 4000));
+  setTimeout(computerTurn, randomTimeoutTime(1600, 3500));
 }
 
 beginNim(totalNimElements);
 
-let nimElements = document.querySelectorAll("#nimdiv div");
-for (let i = 0; i < nimElements.length; i++) {
-  nimElements[i].addEventListener("animationend", function () {
-    nimElements[i].style.opacity = "0";
-  });
-}
-// let armElements = document.querySelectorAll("#armsdiv div img");
-// console.log(armElements);
-// for (let i = 0; i < armElements.length; i++) {
-//   armElements[i].addEventListener("animationend", function () {
-//     armElements[i].src = "images/main-closedclaw.png";
-//     armElements[i].className = "greg";
-//   });
-// }
-// console.log(armElements);
+// ----------------stats section--------------------
+// ----------------vvvvvvvvvvvvvv-------------------
 
 let stats = {};
 

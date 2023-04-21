@@ -15,7 +15,7 @@
   max-width: 1024px;
   top: -600px;
   height: 500px;
-  z-index: 2;
+  z-index: 4;
 }
 #armsdiv div {
   width: 80px;
@@ -36,13 +36,12 @@
   max-width: 1024px;
   top: -600px;
   height: 500px;
-  z-index: 1;
 }
 #clawsdiv1 {
-  z-index: 4;
+  z-index: 6;
 }
 #clawsdiv2 {
-  z-index: 1;
+  z-index: 3;
 }
 
 #clawsdiv1 div,
@@ -85,7 +84,7 @@
   flex-direction: row-reverse;
   /* flex-wrap: wrap; */
   justify-content: space-between;
-  z-index: 3;
+  z-index: 5;
   position: relative;
 }
 
@@ -129,7 +128,7 @@
     transform: translate(0, 0);
   }
   100% {
-    transform: translate(0, 350%);
+    transform: translate(0, 450%);
   }
 }
 @keyframes computer-remove {
@@ -167,5 +166,36 @@
   color: beige;
 }
 #buttondiv.inactive div:hover {
+  cursor: default;
+}
+
+#resetdiv {
+  display: flex;
+  justify-content: space-around;
+}
+
+#resetdiv div {
+  background-color: #feb95f;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 5px;
+  transition: 0.4s;
+}
+
+#resetdiv div:hover {
+  cursor: pointer;
+}
+
+#resetdiv.active div {
+  background-color: #feb95f;
+}
+#resetdiv.active div:hover {
+  cursor: pointer;
+}
+#resetdiv.inactive div {
+  background-color: #86898f;
+  color: beige;
+}
+#resetdiv.inactive div:hover {
   cursor: default;
 }
