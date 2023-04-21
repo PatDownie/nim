@@ -39,6 +39,7 @@ function easterEggActivate() {
   // setTimeout(pageResize, 15000);
   setTimeout(revealChris, 500);
   setTimeout(changeBackground, 7000);
+  // setTimeout(changeBackground, 7);
   setTimeout(revealChris, 500);
   setTimeout(loadingBar, 7000);
   setTimeout(revealText, 19500);
