@@ -25,10 +25,16 @@ function changeBackground() {
   body.className = "chrisbackground";
   HTML.className = "chrisbackground";
 }
+function loadingBar() {
+  let loadingBar = document.getElementById("loadingbar");
+  loadingBar.className = "revealed";
+}
 
 function easterEggActivate() {
-  // setTimeout(pageResize, 19500);
-  setTimeout(pageResize, 15000);
+  setTimeout(pageResize, 19500);
+  // setTimeout(pageResize, 15000);
   setTimeout(revealChris, 500);
   setTimeout(changeBackground, 7000);
+  setTimeout(revealChris, 500);
+  setTimeout(loadingBar, 7000);
 }
