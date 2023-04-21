@@ -14,6 +14,6 @@ function pageResize() {
 }
 
 function easterEggActivate() {
-  setTimeout(pageResize, 19500);
-  // setTimeout(pageResize, 500);
+  // setTimeout(pageResize, 19500);
+  setTimeout(pageResize, 500);
 }
