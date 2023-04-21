@@ -10,7 +10,6 @@ let mockeryArray = [
   "You're quackers!",
   "You were a sitting duck all along!",
   "You ugly duckling!",
-  "You're looking down!",
   "Waddle away, fool!",
   "Your brain needs debugging!",
   "What the duck did you just ducking say to me you little duck? I'll have you know I graduated top of my class in the navy ducklings and h...",
@@ -19,16 +18,25 @@ let mockeryArray = [
   "const you = stupid;",
   'function mockery(){let mockery = "hahaha!"; return mockery;};',
   "I've got a 'variable' to declare! You suck!!",
+  "!youWin",
 ];
 // let mockeryArray = ['function mockery(){let mockery = "hahaha!"; return mockery;};'];
 
-function randomMockery() {
+function revealDucksworth() {
   document.getElementById("computer").className = "compStatic";
   document.getElementById("ducksworth").className = "revealed";
   document.getElementById("ducksworth-arm").className = "revealed";
   document.getElementById("ducksworth-claw1").className = "revealed";
   document.getElementById("ducksworth-claw2").className = "revealed";
+}
+function hideDucksworth() {
+  document.getElementById("ducksworth").className = "hidden";
+  document.getElementById("ducksworth-arm").className = "hidden";
+  document.getElementById("ducksworth-claw1").className = "hidden";
+  document.getElementById("ducksworth-claw2").className = "hidden";
+}
 
+function randomMockery() {
   let random = Math.floor(mockeryArray.length * Math.random());
   let mockery = mockeryArray[random];
   speechText.className = "";
@@ -41,10 +49,7 @@ function resetGame() {
   clawsDiv1.innerHTML = "";
   clawsDiv2.innerHTML = "";
   buttonDiv.innerHTML = "";
-  document.getElementById("ducksworth").className = "hidden";
-  document.getElementById("ducksworth-arm").className = "hidden";
-  document.getElementById("ducksworth-claw1").className = "hidden";
-  document.getElementById("ducksworth-claw2").className = "hidden";
+  hideDucksworth();
   beginNim(totalNimElements);
 }
 
@@ -148,60 +153,64 @@ function beginNim(nimNumber) {
 
 function randomTimeoutTime(min, max) {
   const milliseconds = Math.round(min + (max - min) * Math.random());
-  console.log("delay (ms): " + milliseconds);
+  // console.log("delay (ms): " + milliseconds);
   return milliseconds;
 }
 
 function handlePlayerMove(event) {
-  deactivateAllButtons();
-  let removedDivs = event.target.id;
 
-  document.getElementById("computer").className = "compThink";
-  speechText.textContent = "hmmm...";
-  speechText.className = "thinking";
+  if (event.target.id == 1 || event.target.id == 2 || event.target.id == 3) {
+    deactivateAllButtons();
+    let removedDivs = event.target.id;
 
-  let divForRemoval;
-  for (let i = 0; i < removedDivs; i++) {
-    divForRemoval = document.querySelector("#nimdiv div.unremoved");
-    divForRemoval.className = "player-removed";
-    let robotArm = document.querySelector("#armsdiv div.unremoved");
-    robotArm.className = "player-removed";
-    let robotClaw1 = document.querySelector("#clawsdiv1 div.unremoved");
-    robotClaw1.className = "player-removed";
-    let robotClaw2 = document.querySelector("#clawsdiv2 div.unremoved");
-    robotClaw2.className = "player-removed";
-    ducksTakenThisGame++;
-    console.log("ducksTakenThisGame " + ducksTakenThisGame);
-  }
-  function computerTurn() {
-    let computerRemovedDivs = 4 - event.target.id;
-    console.log(computerRemovedDivs);
-    document.getElementById("computer").className = "compStatic";
+    document.getElementById("computer").className = "compThink";
+    speechText.textContent = "hmmm...";
+    speechText.className = "thinking";
 
-    for (let i = 0; i < computerRemovedDivs; i++) {
-      let divForRemoval = document.querySelector("#nimdiv div.unremoved");
-      divForRemoval.className = "computer-removed";
+    let divForRemoval;
+    for (let i = 0; i < removedDivs; i++) {
+      divForRemoval = document.querySelector("#nimdiv div.unremoved");
+      divForRemoval.className = "player-removed";
       let robotArm = document.querySelector("#armsdiv div.unremoved");
-      robotArm.className = "computer-removed";
+      robotArm.className = "player-removed";
       let robotClaw1 = document.querySelector("#clawsdiv1 div.unremoved");
-      robotClaw1.className = "computer-removed";
+      robotClaw1.className = "player-removed";
       let robotClaw2 = document.querySelector("#clawsdiv2 div.unremoved");
-      robotClaw2.className = "computer-removed";
+      robotClaw2.className = "player-removed";
+      ducksTakenThisGame++;
+      // console.log("ducksTakenThisGame " + ducksTakenThisGame);
     }
-    speechText.className = "";
-    speechText.textContent = "I'll take " + computerRemovedDivs + "!";
-    turnCounter++;
-    if (turnCounter === 3) {
-      document.getElementById("computer").className = "compSmug";
-      // alert("you lose dumbass!!!");
-      saveStats();
-      setTimeout(activateResetButton, 4000);
-      setTimeout(randomMockery, 4000);
-    } else {
-      setTimeout(activateAllButtons, 4000);
+    function computerTurn() {
+      let computerRemovedDivs = 4 - event.target.id;
+
+      document.getElementById("computer").className = "compStatic";
+
+      for (let i = 0; i < computerRemovedDivs; i++) {
+        let divForRemoval = document.querySelector("#nimdiv div.unremoved");
+        divForRemoval.className = "computer-removed";
+        let robotArm = document.querySelector("#armsdiv div.unremoved");
+        robotArm.className = "computer-removed";
+        let robotClaw1 = document.querySelector("#clawsdiv1 div.unremoved");
+        robotClaw1.className = "computer-removed";
+        let robotClaw2 = document.querySelector("#clawsdiv2 div.unremoved");
+        robotClaw2.className = "computer-removed";
+      }
+      speechText.className = "";
+      speechText.textContent = "I'll take " + computerRemovedDivs + "!";
+      turnCounter++;
+      if (turnCounter === 3) {
+        document.getElementById("computer").className = "compSmug";
+        // alert("you lose dumbass!!!");
+        saveStats();
+        setTimeout(activateResetButton, 4000);
+        setTimeout(randomMockery, 4000);
+        setTimeout(revealDucksworth, 4000);
+      } else {
+        setTimeout(activateAllButtons, 4000);
+      }
     }
+    setTimeout(computerTurn, randomTimeoutTime(1600, 3500));
   }
-  setTimeout(computerTurn, randomTimeoutTime(1600, 3500));
 }
 
 beginNim(totalNimElements);

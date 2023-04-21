@@ -160,10 +160,11 @@
 }
 #buttondiv.active div:hover {
   cursor: pointer;
+  color: beige;
 }
 #buttondiv.inactive div {
   background-color: #86898f;
-  color: beige;
+  color: white;
 }
 #buttondiv.inactive div:hover {
   cursor: default;
@@ -184,6 +185,7 @@
 
 #resetdiv div:hover {
   cursor: pointer;
+  color: white;
 }
 
 #resetdiv.active div {
