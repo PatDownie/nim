@@ -205,7 +205,7 @@ nav li:hover {
   left: 8px;
   width: 135px;
   height: 70px;
-  content: url("/images/thinking.gif");
+  content: url("./images/thinking.gif");
   object-fit: fill;
 }
 
@@ -214,7 +214,7 @@ nav li:hover {
   top: 3px;
   left: 5px;
   width: 140px;
-  content: url("/images/mutly.gif");
+  content: url("./images/mutly.gif");
 }
 
 #gameinstruct {
