@@ -52,7 +52,7 @@ function renderWarning() {
   divTitle.textContent = "Nice try!";
   divSel.appendChild(divTitle);
   let divWarn = document.createElement("p");
-  divWarn.textContent = "Nice try dummy, play the game first to get stats. Do you even know what stats are? From, The Super Smart Computer.";
+  divWarn.textContent = "Nice try dummy, play the game first to get stats. Do you even know what stats are? From, The Super Smart V.S.Code.";
   divSel.appendChild(divWarn);
 }
 

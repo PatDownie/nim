@@ -158,6 +158,7 @@ function randomTimeoutTime(min, max) {
 }
 
 function handlePlayerMove(event) {
+
   if (event.target.id == 1 || event.target.id == 2 || event.target.id == 3) {
     deactivateAllButtons();
     let removedDivs = event.target.id;
@@ -244,3 +245,5 @@ function saveStats() {
   console.log(savedStats);
   localStorage.setItem("savedStats", savedStats);
 }
+
+console.log();
