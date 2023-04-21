@@ -175,7 +175,7 @@ function handlePlayerMove(event) {
   }
   function computerTurn() {
     let computerRemovedDivs = 4 - event.target.id;
-
+    console.log(computerRemovedDivs);
     document.getElementById("computer").className = "compStatic";
 
     for (let i = 0; i < computerRemovedDivs; i++) {
@@ -236,3 +236,5 @@ function saveStats() {
   console.log(savedStats);
   localStorage.setItem("savedStats", savedStats);
 }
+
+console.log();
