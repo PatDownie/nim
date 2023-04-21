@@ -96,14 +96,14 @@ function beginNim(nimNumber) {
       let nimElementDiv = document.createElement("div");
       nimElementDiv.className = "unremoved";
       let duckyImg = document.createElement("img");
-      duckyImg.src = "images/angel-ducky.gif";
+      duckyImg.src = "./images/angel-ducky.gif";
       nimElementDiv.appendChild(duckyImg);
       nimDiv.appendChild(nimElementDiv);
     } else {
       let nimElementDiv = document.createElement("div");
       nimElementDiv.className = "unremoved";
       let duckyImg = document.createElement("img");
-      duckyImg.src = "images/ducky.gif";
+      duckyImg.src = "./images/ducky.gif";
       nimElementDiv.appendChild(duckyImg);
       nimDiv.appendChild(nimElementDiv);
     }
@@ -113,7 +113,7 @@ function beginNim(nimNumber) {
     let armElementDiv = document.createElement("div");
     armElementDiv.className = "unremoved";
     let mainArmImg = document.createElement("img");
-    mainArmImg.src = "images/main-noclaw.png";
+    mainArmImg.src = "./images/main-noclaw.png";
     armElementDiv.appendChild(mainArmImg);
     armsDiv.appendChild(armElementDiv);
   }
@@ -122,7 +122,7 @@ function beginNim(nimNumber) {
     let clawElementDiv = document.createElement("div");
     clawElementDiv.className = "unremoved";
     let clawImg = document.createElement("img");
-    clawImg.src = "images/claw-leftopenclaw.png";
+    clawImg.src = "./images/claw-leftopenclaw.png";
     clawElementDiv.appendChild(clawImg);
     clawsDiv1.appendChild(clawElementDiv);
   }
@@ -131,7 +131,7 @@ function beginNim(nimNumber) {
     let clawElementDiv = document.createElement("div");
     clawElementDiv.className = "unremoved";
     let clawImg = document.createElement("img");
-    clawImg.src = "images/claw-openclaw.png";
+    clawImg.src = "./images/claw-openclaw.png";
     clawElementDiv.appendChild(clawImg);
     clawsDiv2.appendChild(clawElementDiv);
   }
@@ -158,7 +158,6 @@ function randomTimeoutTime(min, max) {
 }
 
 function handlePlayerMove(event) {
-
   if (event.target.id == 1 || event.target.id == 2 || event.target.id == 3) {
     deactivateAllButtons();
     let removedDivs = event.target.id;
