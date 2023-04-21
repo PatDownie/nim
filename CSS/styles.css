@@ -2,15 +2,31 @@
   box-sizing: border-box;
 }
 
-html {
+.bodyDiv {
   min-width: 320px;
   max-width: 1024px;
+  /* max-width: 104px; */
   color: black;
   font-family: "Roboto", sans-serif;
   line-height: 1.6;
   letter-spacing: 0.01em;
   margin: 0 auto;
   background-color: #fef5ef;
+}
+.bodyDiv.easterEgg {
+  animation: resize 1s;
+  animation-iteration-count: infinite;
+}
+@keyframes resize {
+  0% {
+    max-width: 1024px;
+  }
+  50% {
+    max-width: 300px;
+  }
+  100% {
+    max-width: 1024px;
+  }
 }
 
 body {
@@ -140,10 +156,10 @@ nav li:hover {
 
 #compHolder {
   position: relative;
-  width: 700px;
+  width: 400px;
   height: 100px;
   top: 20px;
-  left: 300px;
+  left: 250px;
 }
 
 #compHolder #compBorder {
@@ -192,7 +208,6 @@ nav li:hover {
   content: url("/images/mutly.gif");
 }
 
-
 #gameinstruct {
   font-family: DejaVu Sans Mono, monospace;
   padding: 50px;
@@ -213,7 +228,7 @@ nav li:hover {
   padding: 2px;
   width: 71%;
   transform: translateX(22%);
-
+}
 #compHolder #speechbubble {
   position: absolute;
   top: 0px;
@@ -308,7 +323,6 @@ nav li:hover {
   100% {
     top: -590px;
   }
-
 }
 
 /* Results */

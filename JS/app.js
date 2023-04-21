@@ -2,11 +2,11 @@
 
 // Mobile Responsive
 
-const button = document.querySelector(".mobileButton");
-const sound = document.querySelector(".sound");
-button.addEventListener("click", (_) => {
-  sound.play();
-});
+// const button = document.querySelector(".mobileButton");
+// const sound = document.querySelector(".sound");
+// button.addEventListener("click", (_) => {
+//   sound.play();
+// });
 
 // Savestats
 
