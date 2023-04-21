@@ -51,12 +51,12 @@ header {
   max-width: 150px;
 }
 
-a {
+nav a {
   text-decoration: none;
   color: inherit;
 }
 
-li {
+nav li {
   list-style: none;
   display: inline-block;
   margin: 0 0.5rem;
@@ -64,7 +64,7 @@ li {
   transition: 0.5s;
 }
 
-li:hover {
+nav li:hover {
   color: rgb(89, 216, 245);
 }
 /* Main */
@@ -192,6 +192,28 @@ li:hover {
   content: url("/images/mutly.gif");
 }
 
+
+#gameinstruct {
+  font-family: DejaVu Sans Mono, monospace;
+  padding: 50px;
+  text-align: center;
+  background-color: #493e45;
+  color: #fef5ef;
+}
+
+#ducksworthtext {
+  color: #feb95f;
+}
+
+#evilcomp {
+  color: #eb686d;
+}
+
+#gameinstruct p {
+  padding: 2px;
+  width: 71%;
+  transform: translateX(22%);
+
 #compHolder #speechbubble {
   position: absolute;
   top: 0px;
@@ -286,18 +308,35 @@ li:hover {
   100% {
     top: -590px;
   }
+
 }
 
 /* Results */
 .result-container {
-  padding-top: 50px;
+  text-align: center;
+  margin: 5px;
 }
 
-.result-container img {
-  height: auto;
-  margin: auto;
-  display: block;
-  padding-bottom: 40px;
+.result-container h2 {
+  font-size: larger;
+  font-weight: 700;
+}
+
+#statView {
+  width: 65%;
+  position: relative;
+  transform: translateX(18%);
+  margin: 50px;
+}
+
+#statView p {
+  width: 92%;
+  text-align: center;
+  margin: 50px;
+}
+
+#statList {
+  margin: 40px;
 }
 
 .mobileButton {

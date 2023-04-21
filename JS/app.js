@@ -25,13 +25,25 @@ function loadStats() {
 // Render Results
 
 function renderStats() {
+  let number = stats.avgDucksPerGame;
+  let round_number = number.toFixed(2);
   let divSelect = document.querySelector("#statView");
   let divh2 = document.createElement("h2");
   divh2.textContent = `Your Stats!`;
   divSelect.appendChild(divh2);
-  let p = document.createElement("p");
-  p.textContent = `Your total of plays is ${stats.gamesPlayed} and you managed to save ${stats.ducksTaken} ducks, which gives you an average of ${stats.avgDucksPerGame} per game. You've won ${stats.gamesWon} games, that's just terrible`;
-  divSelect.appendChild(p);
+  let ul = document.querySelector("#statList");
+  let liPlays = document.createElement("li");
+  liPlays.textContent = `Your total of plays is ${stats.gamesPlayed}.`;
+  ul.appendChild(liPlays);
+  let liDucks = document.createElement("li");
+  liDucks.textContent = `You've managed to save ${stats.ducksTaken} ducks.`;
+  ul.appendChild(liDucks);
+  let liAvg = document.createElement("li");
+  liAvg.textContent = `Which is an average of ${round_number} ducks per game.`;
+  ul.appendChild(liAvg);
+  let liGames = document.createElement("li");
+  liGames.textContent = `You've won ${stats.gamesWon} games, that's just terrible.`;
+  ul.appendChild(liGames);
 }
 
 function renderWarning() {
@@ -40,7 +52,8 @@ function renderWarning() {
   divTitle.textContent = "Nice try!";
   divSel.appendChild(divTitle);
   let divWarn = document.createElement("p");
-  divWarn.textContent = "Nice try dummy, play the game first to get stats. Do you even know what stats are? - From, The Super Smart Computer.";
+  divWarn.textContent = "Nice try dummy, play the game first to get stats. Do you even know what stats are? From, The Super Smart Computer.";
+  divSel.appendChild(divWarn);
 }
 
 function renderChart() {
