@@ -29,6 +29,10 @@ function loadingBar() {
   let loadingBar = document.getElementById("loadingbar");
   loadingBar.className = "revealed";
 }
+function revealText() {
+  let easterEggText = document.getElementById("eastereggtext");
+  easterEggText.className = "revealed";
+}
 
 function easterEggActivate() {
   setTimeout(pageResize, 19500);
@@ -37,4 +41,5 @@ function easterEggActivate() {
   setTimeout(changeBackground, 7000);
   setTimeout(revealChris, 500);
   setTimeout(loadingBar, 7000);
+  setTimeout(revealText, 19500);
 }
