@@ -42,8 +42,14 @@ function revealText() {
   let easterEggText = document.getElementById("eastereggtext");
   easterEggText.className = "revealed";
 }
+
 function pageReset() {
   location.reload();
+}
+
+function revealReset() {
+  let easterText = document.getElementById("eastereggtext");
+  easterText.textContent = `CLICK CHRIS RESET`;
 }
 
 function easterEggActivate() {
@@ -56,4 +62,5 @@ function easterEggActivate() {
   setTimeout(revealChrisHead, 35230);
   setTimeout(loadingBar, 7000);
   setTimeout(revealText, 19500);
+  setTimeout(revealReset, 53500);
 }

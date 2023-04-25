@@ -690,7 +690,6 @@ html.chrisbackground {
   position: absolute;
   top: -570px;
   left: 50%;
-
   transform: translate(-50%, 0);
   animation-name: textflash;
   animation-duration: 1s;
@@ -706,7 +705,7 @@ html.chrisbackground {
     font-size: 15rem;
   }
   40% {
-    font-size: 11rem;
+    font-size: 12rem;
     color: yellowgreen;
   }
   60% {
@@ -714,7 +713,7 @@ html.chrisbackground {
     color: blue;
   }
   80% {
-    font-size: 11rem;
+    font-size: 12rem;
     color: purple;
   }
   100% {
