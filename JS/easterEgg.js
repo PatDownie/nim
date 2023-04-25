@@ -19,6 +19,15 @@ function revealChris() {
   chrisLeft.className = "revealed";
   chrisRight.className = "revealed";
 }
+function revealChrisHead() {
+  let chrisHead1 = document.getElementById("chrisfloathead");
+  let chrisHead2 = document.getElementById("chrisfloatheads");
+  let chrisHeadVR = document.getElementById("chrisfloatvr");
+  chrisHead1.className = "revealed";
+  chrisHead2.className = "revealed";
+  chrisHeadVR.className = "revealed";
+}
+
 function changeBackground() {
   let HTML = document.querySelector("html");
   let body = document.querySelector("body");
@@ -33,6 +42,9 @@ function revealText() {
   let easterEggText = document.getElementById("eastereggtext");
   easterEggText.className = "revealed";
 }
+function pageReset() {
+  location.reload();
+}
 
 function easterEggActivate() {
   setTimeout(pageResize, 19500);
@@ -41,6 +53,7 @@ function easterEggActivate() {
   setTimeout(changeBackground, 7000);
   // setTimeout(changeBackground, 7);
   setTimeout(revealChris, 500);
+  setTimeout(revealChrisHead, 35230);
   setTimeout(loadingBar, 7000);
   setTimeout(revealText, 19500);
 }
