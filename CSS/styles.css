@@ -473,6 +473,7 @@ footer {
   animation-duration: 4s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+  z-index: 3;
 }
 #chrisfloathead.hidden {
   left: -900px;
@@ -502,6 +503,8 @@ footer {
   bottom: 0px;
   animation-name: reveal-chris-vr, spin;
 }
+#chrisfloathead.revealed,
+#chrisfloatheads.revealed,
 #chrisfloatvr.revealed:hover {
   cursor: pointer;
 }
@@ -682,10 +685,12 @@ html.chrisbackground {
 
 #eastereggtext.revealed {
   /* font-size: 10vw; */
+  background-color: #fcfcfc86;
   text-align: center;
   position: absolute;
-  top: -370px;
+  top: -570px;
   left: 50%;
+
   transform: translate(-50%, 0);
   animation-name: textflash;
   animation-duration: 1s;
@@ -694,26 +699,26 @@ html.chrisbackground {
 @keyframes textflash {
   0% {
     color: red;
-    font-size: 11rem;
+    font-size: 11.5rem;
   }
   20% {
     color: rgb(206, 206, 0);
-    font-size: 9rem;
+    font-size: 15rem;
   }
   40% {
     font-size: 11rem;
     color: yellowgreen;
   }
   60% {
-    font-size: 9rem;
+    font-size: 15rem;
     color: blue;
   }
   80% {
-    font-size: 9rem;
+    font-size: 11rem;
     color: purple;
   }
   100% {
-    font-size: 11rem;
+    font-size: 11.5rem;
     color: red;
   }
 }
