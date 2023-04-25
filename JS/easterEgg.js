@@ -49,7 +49,7 @@ function pageReset() {
 
 function revealReset() {
   let easterText = document.getElementById("eastereggtext");
-  easterText.textContent = `CLICK CHRIS RESET`;
+  easterText.textContent = `!RESPONSIVE`;
 }
 
 function easterEggActivate() {
@@ -63,4 +63,5 @@ function easterEggActivate() {
   setTimeout(loadingBar, 7000);
   setTimeout(revealText, 19500);
   setTimeout(revealReset, 53500);
+  setTimeout(pageReset, 57500);
 }
