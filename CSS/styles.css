@@ -5,7 +5,6 @@
 .bodyDiv {
   min-width: 320px;
   max-width: 1024px;
-  /* max-width: 104px; */
   color: black;
   font-family: "Roboto", sans-serif;
   line-height: 1.6;
@@ -20,6 +19,7 @@ body {
   width: 100%;
 }
 /* Header */
+
 header {
   background-color: #493e45;
   width: 100%;
@@ -243,8 +243,6 @@ nav li:hover {
   top: 0px;
   left: 170px;
   scale: 200%;
-  /* height: 500;
-  width: 600px; */
   z-index: 1;
 }
 
@@ -252,7 +250,6 @@ nav li:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: aqua; */
   position: absolute;
   top: 0px;
   left: 210px;
@@ -335,6 +332,7 @@ nav li:hover {
 }
 
 /* Results */
+
 .result-container {
   text-align: center;
   margin: 5px;
@@ -393,6 +391,7 @@ button:hover .comment {
 }
 
 /* Footer */
+
 footer {
   background-color: #9d5c63;
   padding: 20px;
@@ -417,12 +416,13 @@ footer {
 #easterEggDiv {
   width: 100%;
   height: 10px;
-  /* background-color: #eb686d; */
   position: fixed;
   bottom: 0;
   left: 0;
 }
+
 /* Chris points */
+
 #chrispointleft,
 #chrispointright {
   scale: 40%;
@@ -465,6 +465,7 @@ footer {
 }
 
 /* Chris Heads */
+
 #chrisfloathead,
 #chrisfloatheads,
 #chrisfloatvr {
@@ -489,20 +490,20 @@ footer {
   bottom: -600px;
 }
 #chrisfloathead.revealed {
-  right: 0px;
-  bottom: 0px;
+  right: 50vw;
+  bottom: 50vw;
   animation-name: reveal-chris-head, spin;
 }
 #chrisfloatheads.revealed {
-  left: 450px;
-  bottom: 1500px;
+  left: 50vw;
+  bottom: 50vw;
   animation-name: reveal-chris-heads, spins;
-  animation-duration: 18s;
 }
 #chrisfloatvr.revealed {
-  left: 0px;
-  bottom: 0px;
+  left: 50vw;
+  bottom: 50vw;
   animation-name: reveal-chris-vr, spin;
+  animation-duration: 10s;
 }
 #chrisfloathead.revealed,
 #chrisfloatheads.revealed,
@@ -511,82 +512,82 @@ footer {
 }
 @keyframes reveal-chris-head {
   0% {
-    right: -200px;
-    bottom: -100px;
+    right: 0vw;
+    bottom: 30vh;
     scale: 10%;
   }
   25% {
-    right: 500px;
-    bottom: 100px;
+    right: 10vw;
+    bottom: 40vh;
     scale: 40%;
   }
   50% {
-    right: 1500px;
-    bottom: 600px;
+    right: 20vw;
+    bottom: 30vh;
     scale: 70%;
   }
   75% {
-    right: 300px;
-    bottom: 800px;
+    right: 10vw;
+    bottom: 20vh;
     scale: 40%;
   }
   100% {
-    right: -200px;
-    bottom: -100px;
+    right: 0vw;
+    bottom: 30vh;
     scale: 10%;
-  }
-}
-@keyframes reveal-chris-heads {
-  0% {
-    left: 600px;
-    bottom: 850px;
-    scale: 30%;
-  }
-  25% {
-    left: 2100px;
-    bottom: -100px;
-    scale: 80%;
-  }
-  50% {
-    left: 600px;
-    bottom: -100px;
-    scale: 90%;
-  }
-  75% {
-    left: 2100px;
-    bottom: 900px;
-    scale: 80%;
-  }
-  100% {
-    left: 600px;
-    bottom: 850px;
-    scale: 30%;
   }
 }
 @keyframes reveal-chris-vr {
   0% {
-    left: -200px;
-    bottom: -100px;
+    left: 15vw;
+    bottom: 60vh;
+    scale: 30%;
+  }
+  25% {
+    left: 60vw;
+    bottom: 60vh;
+    scale: 80%;
+  }
+  50% {
+    left: 65vw;
+    bottom: 10vh;
+    scale: 90%;
+  }
+  75% {
+    left: 10vw;
+    bottom: 10vh;
+    scale: 80%;
+  }
+  100% {
+    left: 15vw;
+    bottom: 60vh;
+    scale: 30%;
+  }
+}
+@keyframes reveal-chris-heads {
+  0% {
+    left: 0vw;
+    bottom: 30vh;
     scale: 80%;
   }
   25% {
-    left: 500px;
-    bottom: 100px;
+    left: 10vw;
+    bottom: 40vh;
     scale: 30%;
   }
   50% {
-    left: 1500px;
-    bottom: 600px;
+    left: 20vw;
+    bottom: 30vh;
     scale: 10%;
   }
   75% {
-    right: 300px;
-    bottom: 800px;
+    right: 10vw;
+    bottom: 20vh;
     scale: 30%;
   }
   100% {
-    left: -200px;
-    bottom: -100px;
+    left: 0vw;
+    bottom: 30vh;
     scale: 80%;
   }
 }
@@ -608,6 +609,7 @@ footer {
 }
 
 /* Chris background */
+
 .bodyDiv.easterEgg {
   animation: resize 1s;
   animation-iteration-count: infinite;
@@ -626,7 +628,6 @@ footer {
 
 body.chrisbackground {
   background-image: url("../images/chrishead.png");
-  /* background-position: top 0; */
   animation-name: background-scroll-wave;
   animation-duration: 1s;
   animation-iteration-count: infinite;
@@ -634,7 +635,6 @@ body.chrisbackground {
 }
 html.chrisbackground {
   background-image: url("../images/chrishead.png");
-  /* background-position: top 0; */
   animation-name: background-scroll-wave;
   animation-duration: 1s;
   animation-iteration-count: infinite;
@@ -685,11 +685,9 @@ html.chrisbackground {
 }
 
 #eastereggtext.revealed {
-  /* font-size: 10vw; */
-  background-color: #fcfcfcc4;
   text-align: center;
   position: absolute;
-  top: -570px;
+  top: -470px;
   left: 50%;
   transform: translate(-50%, 0);
   animation-name: textflash;
@@ -703,18 +701,18 @@ html.chrisbackground {
   }
   20% {
     color: rgb(206, 206, 0);
-    font-size: 15rem;
+    font-size: 12rem;
   }
   40% {
-    font-size: 12rem;
+    font-size: 10rem;
     color: yellowgreen;
   }
   60% {
-    font-size: 15rem;
+    font-size: 12rem;
     color: blue;
   }
   80% {
-    font-size: 12rem;
+    font-size: 10rem;
     color: purple;
   }
   100% {
@@ -724,12 +722,11 @@ html.chrisbackground {
 }
 
 #eastereggtext.result {
-  font-size: 15rem;
+  font-size: 10vw;
   color: rgb(0, 38, 255);
-  background-color: #fcfcfcc4;
   text-align: center;
   position: absolute;
-  top: -570px;
+  top: -370px;
   left: 50%;
   transform: translate(-50%, 0);
 }

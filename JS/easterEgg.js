@@ -49,16 +49,14 @@ function pageReset() {
 
 function revealReset() {
   let easterText = document.getElementById("eastereggtext");
-  easterText.textContent = `Result (!RESPONSIVE)`;
+  easterText.textContent = `!RESPONSIVE`;
   easterText.className = "result";
 }
 
 function easterEggActivate() {
   setTimeout(pageResize, 19500);
-  // setTimeout(pageResize, 15000);
   setTimeout(revealChris, 500);
   setTimeout(changeBackground, 7000);
-  // setTimeout(changeBackground, 7);
   setTimeout(revealChris, 500);
   setTimeout(revealChrisHead, 35230);
   setTimeout(loadingBar, 7000);

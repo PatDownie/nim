@@ -82,14 +82,12 @@
 #nimdiv {
   display: flex;
   flex-direction: row-reverse;
-  /* flex-wrap: wrap; */
   justify-content: space-between;
   z-index: 5;
   position: relative;
 }
 
 #nimdiv div {
-  /* background-color: #9d5c63; */
   width: 80px;
   height: 80px;
   transition: all 0.5s ease;
@@ -100,23 +98,17 @@
   height: 150px;
   position: absolute;
   top: -110px;
-  /* background-color: #feb95f; */
 }
 #nimdiv div:last-of-type img {
-  /* background-color: #feb95f; */
   transform: translate(0, -5px);
 }
 #nimdiv div.player-removed {
-  /* width: 0px;
-  height: 0px; */
   animation-name: player-remove;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
 }
 #nimdiv div.computer-removed {
-  /* width: 0px;
-  height: 0px; */
   animation-name: computer-remove;
   animation-duration: 4s;
   animation-timing-function: ease;
