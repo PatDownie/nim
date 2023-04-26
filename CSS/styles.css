@@ -497,6 +497,7 @@ footer {
   left: 450px;
   bottom: 1500px;
   animation-name: reveal-chris-heads, spins;
+  animation-duration: 18s;
 }
 #chrisfloatvr.revealed {
   left: 0px;
