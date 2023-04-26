@@ -7,10 +7,6 @@ let turnCounter = 0;
 let ducksTakenThisGame;
 
 let mockeryArray = [
-  "You're quackers!",
-  "You were a sitting duck all along!",
-  "You ugly duckling!",
-  "Waddle away, fool!",
   "Your brain needs debugging!",
   "What the duck did you just ducking say to me you little duck? I'll have you know I graduated top of my class in the navy ducklings and h...",
   "Even french Jeremy couldn't beat me!",
@@ -20,7 +16,6 @@ let mockeryArray = [
   "I've got a 'variable' to declare! You suck!!",
   "!youWin",
 ];
-// let mockeryArray = ['function mockery(){let mockery = "hahaha!"; return mockery;};'];
 
 function revealDucksworth() {
   document.getElementById("computer").className = "compStatic";
@@ -153,7 +148,6 @@ function beginNim(nimNumber) {
 
 function randomTimeoutTime(min, max) {
   const milliseconds = Math.round(min + (max - min) * Math.random());
-  // console.log("delay (ms): " + milliseconds);
   return milliseconds;
 }
 
@@ -177,7 +171,6 @@ function handlePlayerMove(event) {
       let robotClaw2 = document.querySelector("#clawsdiv2 div.unremoved");
       robotClaw2.className = "player-removed";
       ducksTakenThisGame++;
-      // console.log("ducksTakenThisGame " + ducksTakenThisGame);
     }
     function computerTurn() {
       let computerRemovedDivs = 4 - event.target.id;
@@ -199,7 +192,6 @@ function handlePlayerMove(event) {
       turnCounter++;
       if (turnCounter === 3) {
         document.getElementById("computer").className = "compSmug";
-        // alert("you lose dumbass!!!");
         saveStats();
         setTimeout(activateResetButton, 4000);
         setTimeout(randomMockery, 4000);
