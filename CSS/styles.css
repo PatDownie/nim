@@ -697,26 +697,26 @@ html.chrisbackground {
 @keyframes textflash {
   0% {
     color: red;
-    font-size: 11.5rem;
+    font-size: 10rem;
   }
   20% {
     color: rgb(206, 206, 0);
-    font-size: 12rem;
+    font-size: 10rem;
   }
   40% {
-    font-size: 10rem;
+    font-size: 12rem;
     color: yellowgreen;
   }
   60% {
-    font-size: 12rem;
+    font-size: 10rem;
     color: blue;
   }
   80% {
-    font-size: 10rem;
+    font-size: 12rem;
     color: purple;
   }
   100% {
-    font-size: 11.5rem;
+    font-size: 10rem;
     color: red;
   }
 }
