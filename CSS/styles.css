@@ -686,7 +686,7 @@ html.chrisbackground {
 
 #eastereggtext.revealed {
   /* font-size: 10vw; */
-  background-color: #fcfcfc86;
+  background-color: #fcfcfcc4;
   text-align: center;
   position: absolute;
   top: -570px;
@@ -721,4 +721,15 @@ html.chrisbackground {
     font-size: 11.5rem;
     color: red;
   }
+}
+
+#eastereggtext.result {
+  font-size: 15rem;
+  color: rgb(0, 38, 255);
+  background-color: #fcfcfcc4;
+  text-align: center;
+  position: absolute;
+  top: -570px;
+  left: 50%;
+  transform: translate(-50%, 0);
 }

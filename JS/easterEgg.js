@@ -49,7 +49,8 @@ function pageReset() {
 
 function revealReset() {
   let easterText = document.getElementById("eastereggtext");
-  easterText.textContent = `!RESPONSIVE`;
+  easterText.textContent = `Result (!RESPONSIVE)`;
+  easterText.className = "result";
 }
 
 function easterEggActivate() {
